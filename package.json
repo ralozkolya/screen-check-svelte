@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/ralozkolya/screen-check-svelte.git"
   },
+  "license": "WTFPL",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

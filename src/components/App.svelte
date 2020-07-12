@@ -6,6 +6,11 @@
 	import { fullscreen, exitFullscreen, isFullScreen } from '../utils/fullscreen';
 	import { MAIN_COLORS, toChannels, getColor } from '../utils/colors';
 
+	import ColorButtons from './ColorButtons.svelte';
+	import CustomColor from './CustomColor.svelte';
+	import Sliders from './Sliders.svelte';
+	import Loop from './Loop.svelte';
+
 	let color;
 	let red;
 	let green;
@@ -31,7 +36,8 @@
 		}
 	}
 
-	function onColorClick(color, i) {
+	function onColorClick(e) {
+		const { color, i } = e.detail;
 		cancelLoop(false);
 		index = i;
 		changeColor(color);
@@ -39,19 +45,19 @@
 
 	function changeColor(c) {
 		color = c;
-		const channels = toChannels(c);
-		red = channels[0];
-		green = channels[1];
-		blue = channels[2];
+		[ red, green, blue ] = toChannels(c);
 	}
 
-	function changeChannel() {
+	function onChannelChange() {
 		cancelLoop(false);
+		console.log(red, green, blue);
 		const channels = [red, green, blue].map(toHex).join('');
 		changeColor('#' + channels);
 	}
 
 	function toHex(number) {
+		number = Number(number);
+		number = Math.min(255, Math.max(0, number));
 		return ('0' + number.toString(16)).slice(-2);
 	}
 
@@ -87,40 +93,10 @@
 				<i class={fullscreenIcon}></i>
 			</button>
 		</div>
-		<h4>Main colors:</h4>
-		<div class="color-buttons">
-			{#each MAIN_COLORS as color, i}
-				<button on:click={() => onColorClick(color, i)} style="background-color: {color}">&nbsp;</button>
-			{/each}
-		</div>
-		<div>
-			<input id="loop" type="checkbox" bind:checked={loop} on:change={intervalChanged}>
-			<label for="loop">Loop over main colors every</label>
-			<input id="interval" type="text" bind:value={interval} on:input={intervalChanged}>
-			<label for="interval">seconds</label>
-		</div>
-		<h4>Custom color:</h4>
-		<div>
-			<input id="color" type="text" bind:value={color}>
-			<span class="small">Enter any valid CSS color value</span>
-		</div>
-		<div>
-			<div class="range-container">
-				<label for="red">Red:</label>
-				<input id="red" type="range" min="0" max="255" bind:value={red} on:input={changeChannel}>
-				<input type="text" bind:value={red} on:input={changeChannel}>
-			</div>
-			<div class="range-container">
-				<label for="green">Green:</label>
-				<input id="green" type="range" min="0" max="255" bind:value={green} on:input={changeChannel}>
-				<input type="text" bind:value={green} on:input={changeChannel}>
-			</div>
-			<div class="range-container">
-				<label for="blue">Blue:</label>
-				<input id="blue" type="range" min="0" max="255" bind:value={blue} on:input={changeChannel}>
-				<input type="text" bind:value={blue} on:input={changeChannel}>
-			</div>
-		</div>
+		<ColorButtons on:color-click={onColorClick} />
+		<Loop bind:interval={interval} bind:loop={loop} on:input={intervalChanged} on:change={intervalChanged} />
+		<CustomColor {color} />
+		<Sliders on:input={onChannelChange} bind:red={red} bind:green={green} bind:blue={blue} />
 		<div class="small">
 			<div>Click anywhere outside this panel to hide it</div>
 		</div>

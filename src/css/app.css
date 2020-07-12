@@ -37,6 +37,10 @@ a {
     text-decoration: none;
 }
 
+.control > div:not(:last-child) {
+    margin-bottom: .5em;
+}
+
 .small {
     font-size: .8em;
     color: #555;

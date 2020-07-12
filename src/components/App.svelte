@@ -39,10 +39,6 @@
 		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 	}
 
-	.control > div:not(:last-child) {
-		margin-bottom: .5em;
-	}
-
 	.hidden {
 		transform: translateY(-110%);
 	}

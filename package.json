@@ -4,8 +4,8 @@
     "email": "nikoloz@razmadze.me",
     "url": "https://github.com/ralozkolya"
   },
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "screen-check",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/ralozkolya/screen-check-svelte.git"

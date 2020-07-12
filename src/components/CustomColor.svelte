@@ -1,6 +1,17 @@
 <script>
+
     export let color;
+
 </script>
+
+<style>
+
+    #color {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+</style>
 
 <h4>Custom color:</h4>
 <div>

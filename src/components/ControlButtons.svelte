@@ -62,11 +62,11 @@
 </style>
 
 <div class="float-left">
-    <button class="btn" on:click>
+    <button class="btn" on:click aria-label="Hide panel">
         <i class="icon-left-open"></i>
         <i class="icon-up-open"></i>
     </button>
-    <button class="btn" on:click={maximize}>
+    <button class="btn" on:click={maximize} aria-label="Toggle fullscreen">
         <i class={fullscreenIcon}></i>
     </button>
 </div>

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
 	overflow: hidden;
 	margin: 0;
     height: 100%;
@@ -13,15 +14,21 @@ h4 {
     margin: 1em 0;
 }
 
-button, input {
+button,
+input:not([type=range]):not([type=checkbox]) {
     border: 2px solid #ddd;
     border-radius: .7em;
     outline: none;
     transition: border-color .3s;
 }
 
-button:hover, input:hover, input:focus, input:active {
-    border-color: #999;
+button:hover,
+button:focus,
+button:active,
+input:hover,
+input:focus,
+input:active {
+    border-color: #999 !important;
 }
 
 button {

@@ -65,7 +65,7 @@
 
 <main>
 	<div on:click={toggleHidden} class="background" style="background-color: { color }"></div>
-	<div class="control" class:hidden>
+	<div class="control" class:hidden aria-hidden={hidden}>
 
 		<ControlButtons on:click={toggleHidden} />
 
@@ -73,7 +73,7 @@
 
 		<Loop bind:loop={loop} bind:index={index} bind:color={color} />
 
-		<CustomColor bind:color={color} />
+		<CustomColor bind:color={color} bind:loop={loop} />
 
 		<Sliders bind:color={color} bind:loop={loop} />
 

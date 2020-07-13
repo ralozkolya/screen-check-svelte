@@ -54,16 +54,16 @@
     <div class="range-container">
         <label for="red">Red:</label>
         <input id="red" type="range" min="0" max="255" bind:value={red} on:input={onChannelChange}>
-        <input type="text" bind:value={red} on:input={onChannelChange}>
+        <input type="text" bind:value={red} on:input={onChannelChange} aria-label="Red channel">
     </div>
     <div class="range-container">
         <label for="green">Green:</label>
         <input id="green" type="range" min="0" max="255" bind:value={green} on:input={onChannelChange}>
-        <input type="text" bind:value={green} on:input={onChannelChange}>
+        <input type="text" bind:value={green} on:input={onChannelChange} aria-label="Green channel">
     </div>
     <div class="range-container">
         <label for="blue">Blue:</label>
         <input id="blue" type="range" min="0" max="255" bind:value={blue} on:input={onChannelChange}>
-        <input type="text" bind:value={blue} on:input={onChannelChange}>
+        <input type="text" bind:value={blue} on:input={onChannelChange} aria-label="Blue channel">
     </div>
 </div>

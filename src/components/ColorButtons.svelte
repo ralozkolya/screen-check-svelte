@@ -33,6 +33,6 @@
 <h4>Main colors:</h4>
 <div class="color-buttons">
     {#each MAIN_COLORS as color, i}
-        <button on:click={() => onColorClick(color, i)} style="background-color: {color}">&nbsp;</button>
+        <button on:click={() => onColorClick(color, i)} style="background-color: {color}" aria-label={color} />
     {/each}
 </div>

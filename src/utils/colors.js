@@ -1,7 +1,7 @@
 let context;
 
 export const MAIN_COLORS = [
-    '#ff0000', '#00ff00', '#0000ff', '#ffffff', '#000000', '#7f7f7f'
+    'red', 'lime', 'blue', 'white', 'black', 'gray'
 ];
 
 export function getColor(i) {

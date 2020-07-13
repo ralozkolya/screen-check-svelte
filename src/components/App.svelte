@@ -81,6 +81,6 @@
 			<div>Click anywhere outside this panel to hide it</div>
 		</div>
 
-		<div class="small"><a target="_blank" href="https://github.com/ralozkolya/screen-check-svelte"><i class="icon-github-circled"></i>Source</a></div>
+		<div class="small"><a target="_blank" rel="noopener" href="https://github.com/ralozkolya/screen-check-svelte"><i class="icon-github-circled"></i>Source</a></div>
 	</div>
 </main>
